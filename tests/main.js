@@ -4,7 +4,7 @@ import login from './login.js';
 import scrapeProfile from './scrapeProfile.js';
 
 (async () => {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
   const email = 'dheeraj.jha.ub@gmail.com'; // Replace with actual email
@@ -15,5 +15,5 @@ import scrapeProfile from './scrapeProfile.js';
   const profile = await scrapeProfile(page);
   console.log(profile);
 
-  // await browser.close();
+  await browser.close();
 })();
